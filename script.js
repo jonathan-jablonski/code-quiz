@@ -17,14 +17,14 @@ function startGame(){
 
 // Show questions in the browser
 function displayQuestion() {
-    let currentQuestion = questions[0];
+    currentQuestion = questions[0];
 
     name.textContent = currentQuestion.name;
 
     currentQuestion.choices.forEach(function(choice){
         let choiceBtn = document.createElement("button");
         choiceBtn.setAttribute("value", choice);
-        choiceBtn.addEventListener("click", questionClick);
+        choiceBtn.addEventListener("click", answerClick);
         choiceBtn.textContent = choice;
 
         choices.appendChild(choiceBtn);
