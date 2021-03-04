@@ -17,7 +17,7 @@ function startGame(){
 
 // Show questions in the browser
 function displayQuestion() {
-    currentQuestion = questions[0];
+    currentQuestion = questions[counter];
 
     name.textContent = currentQuestion.name;
 
@@ -33,6 +33,8 @@ function displayQuestion() {
 
 // Upon answering the question
 function answerClick(e){
+    e.preventDefault();
+    console.log(currentQuestion);
     if(e.target.value === currentQuestion.answer){
         console.log('correct');
     } else {
@@ -40,6 +42,7 @@ function answerClick(e){
     }
 
     counter++
+    choices.textContent = "";
 
     displayQuestion();
 }
