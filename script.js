@@ -57,22 +57,23 @@ function answerClick(e){
         displayQuestion();
     } else{
         alert('Game Over');
+        endGame();
     }
 
     
 }
 
 function endGame() {
-    clearInterval(timeInterval);
-    nameScore.removeAttribue('class');
+    clearTimeout(counter);
+    nameScore.removeAttribute('class');
     choices.style.visibility = "hidden";
     question.style.visibility = "hidden";
 }
 
 scoreSubmit.addEventListener("click", function(){
-     let userName = scoreName.timeRemaining;
+     let userName = scoreName.counter;
 
-     localStorage.setItem(userName, timeRemaining);
+     localStorage.setItem(userName, counter);
 });
 
 // // // Timer
@@ -81,7 +82,7 @@ function timeRun() {
     pageTime.textContent = `Time ${timeRemaining}`;
 
     if (timeRemaining <= 0) {
-        clearInterval(timeInterval);
+        clearInterval(timeRemaining);
     }
     
 }
