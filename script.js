@@ -64,16 +64,16 @@ function answerClick(e){
 }
 
 function endGame() {
-    clearTimeout(counter);
+    clearTimeout(timeRemaining);
     nameScore.removeAttribute('class');
     choices.style.visibility = "hidden";
     question.style.visibility = "hidden";
 }
 
 scoreSubmit.addEventListener("click", function(){
-     let userName = scoreName.counter;
+     let userName = scoreName.timeRemaining;
 
-     localStorage.setItem(userName, counter);
+     localStorage.setItem(userName, timeRemaining);
 });
 
 // // // Timer
@@ -82,7 +82,7 @@ function timeRun() {
     pageTime.textContent = `Time ${timeRemaining}`;
 
     if (timeRemaining <= 0) {
-        clearInterval(timeRemaining);
+        clearInterval(timeInterval);
     }
     
 }
