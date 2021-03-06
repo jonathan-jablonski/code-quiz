@@ -50,12 +50,10 @@ function answerClick(e){
 
     counter++
 
-    if(count === questions.length){
-        endGame();
-    } else{
-        choices.innerHTML = '';
-
+    if(count < questions.length - 1){
         displayQuestion();
+    } else{
+        alert('Game Over');
     }
 
     
@@ -68,22 +66,21 @@ function endGame() {
     question.style.visibility = "hidden";
 }
 
-// scoreSubmit.addEventListener("click", function(){
-//     let userName = scoreName.value;
+scoreSubmit.addEventListener("click", function(){
+     let userName = scoreName.value;
 
-//     localStorage.setItem(userName, timeLeft);
-// });
+     localStorage.setItem(userName, timeLeft);
+// // // });
 
-// Timer
+// // // Timer
 function timeRun() {
     timeRemaining--;
     pageTime.textContent = `Time ${timeRemaining}`;
 
-    if (timeRemaining === 0) {
+    if (timeRemaining <= 0) {
         clearInterval(timeInterval);
     }
     
 }
 
-startBtn.addEventListener('click', startGame);
-
+startBtn.addEventListener("click", startGame);
