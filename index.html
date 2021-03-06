@@ -7,16 +7,37 @@
     <title>Code Quiz</title>
 </head>
 <body>
-    <div id="time">60</div>
-    <h1>Welcome to the Code Quiz!</h1>
-    <h2>Test your JavaScript Knowledge</h2>
-    <button id = "start">Start Here</button>
-    <div id = "question">
-        <div id = "name"></div>
-        <div id="choices"></div>
+    <div class="title-bar">
+        <div id="time">Time: 60</div>
+        <div id="view-scores">Highscores</div>
     </div>
+    
+    <div class="centered">
+
+        <div id="greetingMsg">
+            <h1>Welcome to the Code Quiz!</h1>
+            <p>Click below to test your JavaScript knowledge.</p>
+        </div>
+
+        <div id="questionsBox">
+            <div id = "question">
+            <div id = "name"></div>
+            <div id="choices"></div>
+        </div>
+
+        <button id = "start">Start Here</button>
+        <div class ="hide" id="score"></div>
+    </div>
+    
+    <div class="hide" id="userScore">
+        <input id="userName"></input>
+        <button id="userScoreSubmit">Submit Score</button>
+    </div>
+    </div>
+    
     <script src = "questions.js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>

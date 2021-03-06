@@ -3,10 +3,16 @@ let startBtn = document.querySelector('#start');
 let timeInterval;
 let pageTime = document.querySelector('#time');
 let question = document.querySelector('#question');
-let name = document.querySelector('#name');
+let questionName = document.querySelector('#name');
 let choices = document.querySelector('#choices');
 let currentQuestion;
 let counter = 0;
+let nameScore = document.querySelector('#score');
+let scoreName = document.querySelector('#scoreName');
+let scoreSubmit = document.querySelector('#scoreSubmit');
+let greetingMsg = document.querySelector('#greetingMsg');
+let rightAnswer = document.querySelector('#rightAnswer');
+let wrongAnswer = document.querySelector('#wrongAnswer');
 
 // Starting quiz
 function startGame(){
@@ -19,7 +25,7 @@ function startGame(){
 function displayQuestion() {
     currentQuestion = questions[counter];
 
-    name.textContent = currentQuestion.name;
+    question.textContent = currentQuestion.name;
 
     currentQuestion.choices.forEach(function(choice){
         let choiceBtn = document.createElement("button");
@@ -28,6 +34,7 @@ function displayQuestion() {
         choiceBtn.textContent = choice;
 
         choices.appendChild(choiceBtn);
+        // choicesBtn.className = "my-choices-btn";
     });
 }
 
@@ -42,19 +49,40 @@ function answerClick(e){
     }
 
     counter++
-    choices.textContent = "";
 
-    displayQuestion();
+    if(count === questions.length){
+        endGame();
+    } else{
+        choices.innerHTML = '';
+
+        displayQuestion();
+    }
+
+    
 }
+
+function endGame() {
+    clearInterval(timeInterval);
+    nameScore.removeAttribue('class');
+    choices.style.visibility = "hidden";
+    question.style.visibility = "hidden";
+}
+
+// scoreSubmit.addEventListener("click", function(){
+//     let userName = scoreName.value;
+
+//     localStorage.setItem(userName, timeLeft);
+// });
 
 // Timer
 function timeRun() {
     timeRemaining--;
-    pageTime.textContent = timeRemaining;
+    pageTime.textContent = `Time ${timeRemaining}`;
 
     if (timeRemaining === 0) {
         clearInterval(timeInterval);
     }
+    
 }
 
 startBtn.addEventListener('click', startGame);
