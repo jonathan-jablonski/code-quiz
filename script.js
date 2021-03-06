@@ -35,6 +35,8 @@ function displayQuestion() {
 
         choices.appendChild(choiceBtn);
         // choicesBtn.className = "my-choices-btn";
+        console.log(choices)
+        console.log(choiceBtn)
     });
 }
 
@@ -50,7 +52,8 @@ function answerClick(e){
 
     counter++
 
-    if(count < questions.length - 1){
+    if(counter < questions.length){
+        choices.innerHTML = '';
         displayQuestion();
     } else{
         alert('Game Over');
@@ -67,9 +70,9 @@ function endGame() {
 }
 
 scoreSubmit.addEventListener("click", function(){
-     let userName = scoreName.value;
+     let userName = scoreName.timeRemaining;
 
-     localStorage.setItem(userName, timeLeft);
+     localStorage.setItem(userName, timeRemaining);
 });
 
 // // // Timer
