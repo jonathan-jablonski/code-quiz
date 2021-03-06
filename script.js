@@ -70,7 +70,7 @@ scoreSubmit.addEventListener("click", function(){
      let userName = scoreName.value;
 
      localStorage.setItem(userName, timeLeft);
-// // // });
+});
 
 // // // Timer
 function timeRun() {
