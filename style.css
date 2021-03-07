@@ -9,6 +9,7 @@ body {
     background-color: lightsalmon;
     font-family: 'Architects Daughter', cursive;
     font-weight: 300;
+    font-size: large;
 }
 
 .centered{
@@ -33,4 +34,71 @@ body {
     float: left;
     font-size:x-large;
     margin: 20px;
+}
+
+#start{
+    background-color: honeydew;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 400;
+    border-style: outset;
+    border-color: cornflowerblue;
+    border-radius: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 15 px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-left: 45%;
+    align-items: center;
+    font-size: 15px;
+}
+
+.my-choice-btn {
+    background-color: honeydew;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 400;
+    border-style: outset;
+    border-color: cornflowerblue;
+    border-radius: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 15 px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-left: 45%;
+    align-items: center;
+    font-size: 15px;
+}
+
+.title-bar {
+    width: 100%;
+}
+
+#scoreSubmit {
+    background-color: honeydew;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 400;
+    border-style: outset;
+    border-color: cornflowerblue;
+    border-radius: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 15 px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-left: 45%;
+    align-items: center;
+    font-size: 15px;
+    justify-content: center;
+}
+
+#userName{
+    background-color: cornsilk;
+    border-color: cornflowerblue;
+    margin-left: 5%;
+    margin-bottom: 2%;
+
 }

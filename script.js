@@ -39,7 +39,7 @@ function displayQuestion() {
         choiceBtn.setAttribute("value", choice);
         choiceBtn.addEventListener("click", answerClick);
         choiceBtn.textContent = choice;
-
+        choiceBtn.className = "my-choice-btn"
         choices.appendChild(choiceBtn);
         
         startBtn.style.visibility = "hidden";
@@ -55,7 +55,7 @@ function answerClick(e){
         
     } else {
         console.log('false');
-        timeRemaining = timeRemaining - 10;
+        timeRemaining = timeRemaining - 10
     }
 
     counter++
