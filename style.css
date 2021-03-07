@@ -1,3 +1,23 @@
-.hide{
+/* .hide{
     display: none;
+} */
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color:cornsilk;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 300;
+}
+
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:deepskyblue
+    width: 900px;
+    height: 600px;
+    text-align: center;
 }

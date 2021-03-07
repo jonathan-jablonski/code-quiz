@@ -7,6 +7,7 @@ let questionName = document.querySelector('#name');
 let choices = document.querySelector('#choices');
 let currentQuestion;
 let counter = 0;
+let userName = document.querySelector('#userName');
 let nameScore = document.querySelector('#score');
 let scoreName = document.querySelector('#scoreName');
 let scoreSubmit = document.querySelector('#scoreSubmit');
@@ -14,10 +15,14 @@ let greetingMsg = document.querySelector('#greetingMsg');
 let rightAnswer = document.querySelector('#rightAnswer');
 let wrongAnswer = document.querySelector('#wrongAnswer');
 
+scoreSubmit.style.visibility = "hidden";
+nameScore.style.visibility = "hidden";
+userName.style.visibility = "hidden";
+
 // Starting quiz
 function startGame(){
     timeInterval = setInterval(timeRun, 1000);
-
+    
     displayQuestion();
 }
 
@@ -35,6 +40,7 @@ function displayQuestion() {
 
         choices.appendChild(choiceBtn);
         // choicesBtn.className = "my-choices-btn";
+        startBtn.style.visibility = "hidden";
         console.log(choices)
         console.log(choiceBtn)
     });
@@ -64,10 +70,14 @@ function answerClick(e){
 }
 
 function endGame() {
-    clearTimeout(timeRemaining);
+    clearInterval(timeInterval);
     nameScore.removeAttribute('class');
     choices.style.visibility = "hidden";
     question.style.visibility = "hidden";
+    scoreSubmit.style.visibility = "visible";
+    nameScore.style.visibility = "visible";
+    userName.style.visibility = "visible";
+
 }
 
 scoreSubmit.addEventListener("click", function(){
