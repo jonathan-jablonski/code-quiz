@@ -29,7 +29,7 @@ function startGame(){
 // Show questions in the browser
 function displayQuestion() {
     currentQuestion = questions[counter];
-
+    greetingMsg.style.visibility = "hidden";
     question.textContent = currentQuestion.name;
 
     currentQuestion.choices.forEach(function(choice){
@@ -39,7 +39,7 @@ function displayQuestion() {
         choiceBtn.textContent = choice;
 
         choices.appendChild(choiceBtn);
-        // choicesBtn.className = "my-choices-btn";
+        
         startBtn.style.visibility = "hidden";
         console.log(choices)
         console.log(choiceBtn)
@@ -81,7 +81,7 @@ function endGame() {
 }
 
 scoreSubmit.addEventListener("click", function(){
-     localStorage.setItem('#userName', timeRemaining);
+     localStorage.setItem(userName, timeRemaining);
 });
 
 // // // Timer
