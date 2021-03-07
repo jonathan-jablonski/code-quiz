@@ -19,5 +19,15 @@ let questions = [
         answer: "All of the above",
         choices: ["Separate .js files","Variables","Functions","All of the above"],
     },
+    {
+        name: "What method is used to get an HTML element?",
+        answer: "document.getElementByID",
+        choices: ["document.getElementByID", "localStorage.getItem", ".textContent", "JSON.parse"],
+    },
+    {
+        name: "What should be the first step when beginning a JavaScript file from scratch?",
+        answer: "Create an index.html file",
+        choices: ["Write a function", "Create an index.html file", "Assign variables", "Clean your house as a form of procrastination"],
+    }
     
 ];
