@@ -42,8 +42,6 @@ function displayQuestion() {
         choices.appendChild(choiceBtn);
         
         startBtn.style.visibility = "hidden";
-        console.log(choices)
-        console.log(choiceBtn)
     });
 }
 
@@ -52,7 +50,8 @@ function answerClick(e){
     e.preventDefault();
     console.log(currentQuestion);
     if(e.target.value === currentQuestion.answer){
-        console.log('correct');
+        console.log('true');
+        
     } else {
         console.log('false');
     }
@@ -70,6 +69,7 @@ function answerClick(e){
     
 }
 
+// End of the game
 function endGame() {
     clearInterval(timeInterval);
     nameScore.removeAttribute('class');
@@ -78,20 +78,21 @@ function endGame() {
     scoreSubmit.style.visibility = "visible";
     nameScore.style.visibility = "visible";
     userName.style.visibility = "visible";
+    
 
 }
 
+// Gathering scores and initials for high scores
 scoreSubmit.addEventListener("click", function(event){
     event.preventDefault();
     highScores.push({
         name: userName.value,
         score: timeRemaining
     });
-    console.log(userName, timeRemaining);
     localStorage.setItem('scores',JSON.stringify(highScores));
 });
 
-// // // Timer
+// Timer
 function timeRun() {
     timeRemaining--;
     pageTime.textContent = `Time ${timeRemaining}`;
@@ -102,12 +103,19 @@ function timeRun() {
     
 }
 
-function renderHighScores() {
-    var highScores = JSON.parse(localStorage.getItem("highScores"));
-    if (highScores !== null){
-        document.querySelector('#view-scores').textContent = 
+// Appending high scores to an array for display
+function renderScores() {
+    const highScoreDiv = document.querySelector('#high-scores');
+    if (localStorage.getItem('scores')) {
+        highScores = JSON.parse(localStorage.getItem('scores'));
+        if (highScores.length > 0) {
+            for(let i = 0; i < highScores.length; i++) {
+                const div = document.createElement('div');
+                div.textContent = `${highScores[i].name} - ${highScores[i].score}`;
+                highScoreDiv.appendChild(div);
+            }
+        }
     }
-
 }
-
+renderScores();
 startBtn.addEventListener("click", startGame);
