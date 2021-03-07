@@ -64,7 +64,7 @@ function answerClick(e){
         choices.innerHTML = '';
         displayQuestion();
     } else{
-        alert('Game Over');
+        alert('Game Over! Put in your initials to submit your score.');
         endGame();
     }
 }
@@ -92,6 +92,7 @@ scoreSubmit.addEventListener("click", function(event){
         score: timeRemaining
     });
     localStorage.setItem('scores',JSON.stringify(highScores));
+    
 });
 
 // Timer
@@ -118,9 +119,8 @@ function renderScores() {
             }
         }
     }
-    document.getElementById('view-scores').addEventListener('click', renderScores);
+    
 }
-renderScores();
 
-
+document.getElementById('view-scores').addEventListener('click', renderScores);
 startBtn.addEventListener("click", startGame);
