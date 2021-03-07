@@ -64,7 +64,7 @@ function answerClick(e){
         choices.innerHTML = '';
         displayQuestion();
     } else{
-        alert('Game Over! Put in your initials to submit your score.');
+        alert('Game Over! Put in your initials to submit your score, or refresh to try again.');
         endGame();
     }
 }
