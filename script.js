@@ -14,6 +14,7 @@ let scoreSubmit = document.querySelector('#scoreSubmit');
 let greetingMsg = document.querySelector('#greetingMsg');
 let rightAnswer = document.querySelector('#rightAnswer');
 let wrongAnswer = document.querySelector('#wrongAnswer');
+let highScores = [];
 
 scoreSubmit.style.visibility = "hidden";
 nameScore.style.visibility = "hidden";
@@ -80,8 +81,14 @@ function endGame() {
 
 }
 
-scoreSubmit.addEventListener("click", function(){
-     localStorage.setItem(userName, timeRemaining);
+scoreSubmit.addEventListener("click", function(event){
+    event.preventDefault();
+    highScores.push({
+        name: userName.value,
+        score: timeRemaining
+    });
+    console.log(userName, timeRemaining);
+    localStorage.setItem('scores',JSON.stringify(highScores));
 });
 
 // // // Timer
@@ -93,6 +100,14 @@ function timeRun() {
         clearInterval(timeInterval);
     }
     
+}
+
+function renderHighScores() {
+    var highScores = JSON.parse(localStorage.getItem("highScores"));
+    if (highScores !== null){
+        document.querySelector('#view-scores').textContent = 
+    }
+
 }
 
 startBtn.addEventListener("click", startGame);
