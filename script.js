@@ -81,9 +81,7 @@ function endGame() {
 }
 
 scoreSubmit.addEventListener("click", function(){
-     let userName = scoreName.timeRemaining;
-
-     localStorage.setItem(userName, timeRemaining);
+     localStorage.setItem('#userName', timeRemaining);
 });
 
 // // // Timer
