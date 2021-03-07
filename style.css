@@ -26,6 +26,7 @@ body {
     float: right;
     font-size:large;
     margin: 20px;
+    cursor:pointer;
 }
 
 #time{

@@ -20,6 +20,7 @@ scoreSubmit.style.visibility = "hidden";
 nameScore.style.visibility = "hidden";
 userName.style.visibility = "hidden";
 
+
 // Starting quiz
 function startGame(){
     timeInterval = setInterval(timeRun, 1000);
@@ -54,6 +55,7 @@ function answerClick(e){
         
     } else {
         console.log('false');
+        timeRemaining = timeRemaining - 10;
     }
 
     counter++
@@ -65,9 +67,9 @@ function answerClick(e){
         alert('Game Over');
         endGame();
     }
+}
 
     
-}
 
 // End of the game
 function endGame() {
@@ -116,6 +118,9 @@ function renderScores() {
             }
         }
     }
+    document.getElementById('view-scores').addEventListener('click', renderScores);
 }
 renderScores();
+
+
 startBtn.addEventListener("click", startGame);
